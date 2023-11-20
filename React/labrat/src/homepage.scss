@@ -1,0 +1,29 @@
+.home{
+    display: flex;
+    justify-content: center; // center children horizontally
+    align-items: center; // center children vertically
+    height: 100vh; // take up full viewport height
+
+    .homecontainer{
+        flex: 3;
+        padding: 20px; // add space around the grid
+
+        .widgets{
+            display: grid;
+            padding: 20px;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); // default to 1 column on small screens
+            margin: auto; // center the grid horizontally
+            justify-content: center; // center the grid items horizontally
+            align-items: center; // center the grid items vertically
+
+            @media (min-width: 600px) { // when screen is 600px or wider
+                grid-template-columns: repeat(2, 1fr); // switch to 2 columns
+            }
+
+            @media (min-width: 900px) { // when screen is 900px or wider
+                grid-template-columns: repeat(3, 1fr); // switch to 3 columns
+            }
+        }
+    }
+}
